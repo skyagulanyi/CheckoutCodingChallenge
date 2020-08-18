@@ -1,0 +1,114 @@
+﻿<Window x:Class="Checkout.Payment.Client.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Checkout.Payment.Client.App"
+        xmlns:vm="clr-namespace:Checkout.Payment.Client.App.ViewModels"
+        xmlns:cnv="clr-namespace:Checkout.Payment.Client.App.Converters"
+        mc:Ignorable="d"
+        Title="Payment Gateway Client" Height="450" Width="800">
+    <Window.Resources>
+        <cnv:AmountConverter x:Key="amountConverter" />
+        <cnv:StatusConverter x:Key="statusConverter" />
+    </Window.Resources>
+    <Window.DataContext>
+        <vm:PaymentGatewayViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Merchant Id:" Grid.Row="0" Grid.Column="0"/>
+        <TextBlock Text="{Binding Merchant.Id}"  Grid.Row="0" Grid.Column="1" />
+        <Label Content="Name:" Grid.Column="0" Grid.Row="1" />
+        <TextBlock Text="{Binding Merchant.Name}" Grid.Row="1" Grid.Column="1" />
+        <Label Content="Card Number:" Grid.Column="0" Grid.Row="2" />
+        <ComboBox 
+            ItemsSource="{Binding Cards}"
+            Grid.Column="2" 
+            Grid.Row="2" 
+            Height="22" 
+            Width="300" 
+            HorizontalAlignment="Left"
+            SelectedItem="{Binding SelectedCard}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding CardNumber}"></TextBlock>
+                        <TextBlock Text=" "></TextBlock>
+                        <TextBlock Text="{Binding Expiry}"></TextBlock>
+                        <TextBlock Text=" "></TextBlock>
+                        <TextBlock Text="{Binding Cvv}"></TextBlock>
+                    </WrapPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Content="Amount:" Grid.Column="0" Grid.Row="3" />
+        <TextBox Text="{Binding Amount}"  Grid.Column="1" Grid.Row="3"/>
+        <Button Command="{Binding Path=MakePaymentCommand}" Content="Make Payment" Width="120" Height="20" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
+        <Label Content="Payments" Grid.Row="5" />
+        <DataGrid 
+            Grid.Row="6" 
+            Grid.ColumnSpan="2"
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            CanUserDeleteRows="False"
+            CanUserSortColumns="False"
+            ItemsSource="{Binding Transactions}"
+            SelectedItem="{Binding SelectedTransaction}"
+            IsReadOnly="True"
+            >
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="Request Payment Id" Binding="{Binding RequestPaymentId}" />
+                <DataGridTextColumn Width="*" Header="Gateway Payment Id" Binding="{Binding GatewayPaymentId}" />
+                <DataGridTextColumn Width="*" Header="Transaction Id" Binding="{Binding TransactionId}" />
+                <DataGridTextColumn Width="*" Header="Merchant" Binding="{Binding Merchant.Name}" />
+                <DataGridTextColumn Width="*" Header="Amount" Binding="{Binding Amount, Converter={StaticResource amountConverter}}" />
+                <DataGridTextColumn Width="*" Header="Message" Binding="{Binding Message}" />
+                <DataGridTextColumn Width="*" Header="Status" Binding="{Binding Status, Converter={StaticResource statusConverter}}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Previous Payment Details" Grid.Row="7" />
+        <Grid Grid.Row="8" Grid.ColumnSpan="2" DataContext="{Binding CurrentPreviousPayment}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Text="PaymentId"></TextBlock>
+            <TextBlock Text="{Binding PaymentId}" Grid.Column="1"></TextBlock>
+            <TextBlock Text="TransactionId" Grid.Row="1"></TextBlock>
+            <TextBlock Text="{Binding TransactionId}" Grid.Column="1" Grid.Row="1"></TextBlock>
+            <TextBlock Text="MaskedCardNumber" Grid.Row="2"></TextBlock>
+            <TextBlock Text="{Binding MaskedCardNumber}" Grid.Column="1" Grid.Row="2"></TextBlock>
+            <TextBlock Text="Expiry" Grid.Row="3"></TextBlock>
+            <TextBlock Text="{Binding Expiry}" Grid.Column="1" Grid.Row="3"></TextBlock>
+            <TextBlock Text="Cvv" Grid.Column="2" Grid.Row="0"></TextBlock>
+            <TextBlock Text="{Binding Cvv}" Grid.Column="3" Grid.Row="0"></TextBlock>
+            <TextBlock Text="Amount" Grid.Column="2" Grid.Row="1"></TextBlock>
+            <TextBlock Text="{Binding Amount, Converter={StaticResource amountConverter}}" Grid.Column="3" Grid.Row="1"></TextBlock>
+            <TextBlock Text="Status" Grid.Column="2" Grid.Row="2"></TextBlock>
+            <TextBlock Text="{Binding Status, Converter={StaticResource statusConverter}}" Grid.Column="3" Grid.Row="2"></TextBlock>
+        </Grid>
+    </Grid>
+</Window>

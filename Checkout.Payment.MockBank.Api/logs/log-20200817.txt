@@ -1,0 +1,96 @@
+2020-08-17 21:32:15.460 +01:00 [Debug] Hosting starting
+2020-08-17 21:32:15.718 +01:00 [Debug] Loaded hosting startup assembly "Checkout.Payment.MockBank.Api"
+2020-08-17 21:32:15.725 +01:00 [Information] Application started. Press Ctrl+C to shut down.
+2020-08-17 21:32:15.726 +01:00 [Information] Hosting environment: "Development"
+2020-08-17 21:32:15.726 +01:00 [Information] Content root path: "C:\Users\write\source\repos\Checkout.Payment\Checkout.Payment.MockBank.Api"
+2020-08-17 21:32:15.726 +01:00 [Debug] Hosting started
+2020-08-17 21:32:15.767 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44345/weatherforecast  
+2020-08-17 21:32:15.771 +01:00 [Debug] Wildcard detected, all requests with hosts will be allowed.
+2020-08-17 21:32:15.785 +01:00 [Debug] The request path "" does not match the path filter
+2020-08-17 21:32:15.799 +01:00 [Debug] No candidates found for the request path '"/weatherforecast"'
+2020-08-17 21:32:15.799 +01:00 [Debug] Request did not match any endpoints
+2020-08-17 21:32:15.815 +01:00 [Information] Request finished in 49.8508ms 404 
+2020-08-17 21:32:24.137 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44345/swagger/index.html  
+2020-08-17 21:32:24.179 +01:00 [Information] Request finished in 42.491600000000005ms 200 text/html;charset=utf-8
+2020-08-17 21:32:24.751 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44345/swagger/v1/swagger.json  
+2020-08-17 21:32:24.841 +01:00 [Information] Request finished in 90.29090000000001ms 200 application/json;charset=utf-8
+2020-08-17 21:33:18.819 +01:00 [Information] Request starting HTTP/2.0 POST https://localhost:44345/PaymentService application/json 191
+2020-08-17 21:33:18.820 +01:00 [Debug] "POST" requests are not supported
+2020-08-17 21:33:18.824 +01:00 [Debug] 1 candidate(s) found for the request path '"/PaymentService"'
+2020-08-17 21:33:18.828 +01:00 [Debug] Endpoint '"Checkout.Payment.MockBank.Api.Controllers.PaymentServiceController.ProcessTransaction (Checkout.Payment.MockBank.Api)"' with route pattern '"PaymentService"' is valid for the request path '"/PaymentService"'
+2020-08-17 21:33:18.829 +01:00 [Debug] Request matched endpoint '"Checkout.Payment.MockBank.Api.Controllers.PaymentServiceController.ProcessTransaction (Checkout.Payment.MockBank.Api)"'
+2020-08-17 21:33:18.829 +01:00 [Information] Executing endpoint '"Checkout.Payment.MockBank.Api.Controllers.PaymentServiceController.ProcessTransaction (Checkout.Payment.MockBank.Api)"'
+2020-08-17 21:33:18.835 +01:00 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2020-08-17 21:33:18.857 +01:00 [Information] Route matched with "{action = \"ProcessTransaction\", controller = \"PaymentService\"}". Executing controller action with signature "Checkout.Payment.Bank.Library.TransactionResponse ProcessTransaction(Checkout.Payment.Bank.Library.TransactionRequest)" on controller "Checkout.Payment.MockBank.Api.Controllers.PaymentServiceController" ("Checkout.Payment.MockBank.Api").
+2020-08-17 21:33:18.859 +01:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2020-08-17 21:33:18.860 +01:00 [Debug] Execution plan of "resource" filters (in the following order): ["None"]
+2020-08-17 21:33:18.860 +01:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2020-08-17 21:33:18.860 +01:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2020-08-17 21:33:18.860 +01:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2020-08-17 21:33:18.861 +01:00 [Debug] Executing controller factory for controller "Checkout.Payment.MockBank.Api.Controllers.PaymentServiceController" ("Checkout.Payment.MockBank.Api")
+2020-08-17 21:33:18.862 +01:00 [Debug] Executed controller factory for controller "Checkout.Payment.MockBank.Api.Controllers.PaymentServiceController" ("Checkout.Payment.MockBank.Api")
+2020-08-17 21:33:18.866 +01:00 [Debug] Attempting to bind parameter '"request"' of type '"Checkout.Payment.Bank.Library.TransactionRequest"' ...
+2020-08-17 21:33:18.867 +01:00 [Debug] Attempting to bind parameter '"request"' of type '"Checkout.Payment.Bank.Library.TransactionRequest"' using the name '""' in request data ...
+2020-08-17 21:33:18.868 +01:00 [Debug] Selected input formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter"' for content type '"application/json"'.
+2020-08-17 21:33:18.876 +01:00 [Debug] JSON input formatter succeeded, deserializing to type '"Checkout.Payment.Bank.Library.TransactionRequest"'
+2020-08-17 21:33:18.876 +01:00 [Debug] Done attempting to bind parameter '"request"' of type '"Checkout.Payment.Bank.Library.TransactionRequest"'.
+2020-08-17 21:33:18.876 +01:00 [Debug] Done attempting to bind parameter '"request"' of type '"Checkout.Payment.Bank.Library.TransactionRequest"'.
+2020-08-17 21:33:18.876 +01:00 [Debug] Attempting to validate the bound parameter '"request"' of type '"Checkout.Payment.Bank.Library.TransactionRequest"' ...
+2020-08-17 21:33:18.879 +01:00 [Debug] Done attempting to validate the bound parameter '"request"' of type '"Checkout.Payment.Bank.Library.TransactionRequest"'.
+2020-08-17 21:33:18.881 +01:00 [Information] Received payment request Amazon 1212.99 Eur
+2020-08-17 21:33:18.881 +01:00 [Information] Processed payment request Amazon 1212.99 Eur 
+2020-08-17 21:33:18.882 +01:00 [Debug] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2020-08-17 21:33:18.884 +01:00 [Debug] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2020-08-17 21:33:18.884 +01:00 [Debug] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2020-08-17 21:33:18.884 +01:00 [Debug] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2020-08-17 21:33:18.884 +01:00 [Debug] Attempting to select the first formatter in the output formatters list which can write the result.
+2020-08-17 21:33:18.885 +01:00 [Debug] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"' and content type '"application/json"' to write the response.
+2020-08-17 21:33:18.885 +01:00 [Information] Executing ObjectResult, writing value of type '"Checkout.Payment.Bank.Library.TransactionResponse"'.
+2020-08-17 21:33:18.893 +01:00 [Information] Executed action "Checkout.Payment.MockBank.Api.Controllers.PaymentServiceController.ProcessTransaction (Checkout.Payment.MockBank.Api)" in 29.835800000000003ms
+2020-08-17 21:33:18.893 +01:00 [Information] Executed endpoint '"Checkout.Payment.MockBank.Api.Controllers.PaymentServiceController.ProcessTransaction (Checkout.Payment.MockBank.Api)"'
+2020-08-17 21:33:18.893 +01:00 [Information] Request finished in 74.6821ms 200 application/json; charset=utf-8
+2020-08-17 21:34:02.733 +01:00 [Information] Request starting HTTP/2.0 POST https://localhost:44345/PaymentService application/json 191
+2020-08-17 21:34:02.734 +01:00 [Debug] "POST" requests are not supported
+2020-08-17 21:34:02.735 +01:00 [Debug] 1 candidate(s) found for the request path '"/PaymentService"'
+2020-08-17 21:34:02.735 +01:00 [Debug] Endpoint '"Checkout.Payment.MockBank.Api.Controllers.PaymentServiceController.ProcessTransaction (Checkout.Payment.MockBank.Api)"' with route pattern '"PaymentService"' is valid for the request path '"/PaymentService"'
+2020-08-17 21:34:02.736 +01:00 [Debug] Request matched endpoint '"Checkout.Payment.MockBank.Api.Controllers.PaymentServiceController.ProcessTransaction (Checkout.Payment.MockBank.Api)"'
+2020-08-17 21:34:02.736 +01:00 [Information] Executing endpoint '"Checkout.Payment.MockBank.Api.Controllers.PaymentServiceController.ProcessTransaction (Checkout.Payment.MockBank.Api)"'
+2020-08-17 21:34:02.738 +01:00 [Information] Route matched with "{action = \"ProcessTransaction\", controller = \"PaymentService\"}". Executing controller action with signature "Checkout.Payment.Bank.Library.TransactionResponse ProcessTransaction(Checkout.Payment.Bank.Library.TransactionRequest)" on controller "Checkout.Payment.MockBank.Api.Controllers.PaymentServiceController" ("Checkout.Payment.MockBank.Api").
+2020-08-17 21:34:02.739 +01:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2020-08-17 21:34:02.739 +01:00 [Debug] Execution plan of "resource" filters (in the following order): ["None"]
+2020-08-17 21:34:02.739 +01:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2020-08-17 21:34:02.739 +01:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2020-08-17 21:34:02.739 +01:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2020-08-17 21:34:02.739 +01:00 [Debug] Executing controller factory for controller "Checkout.Payment.MockBank.Api.Controllers.PaymentServiceController" ("Checkout.Payment.MockBank.Api")
+2020-08-17 21:34:02.740 +01:00 [Debug] Executed controller factory for controller "Checkout.Payment.MockBank.Api.Controllers.PaymentServiceController" ("Checkout.Payment.MockBank.Api")
+2020-08-17 21:34:02.745 +01:00 [Debug] Attempting to bind parameter '"request"' of type '"Checkout.Payment.Bank.Library.TransactionRequest"' ...
+2020-08-17 21:34:02.751 +01:00 [Debug] Attempting to bind parameter '"request"' of type '"Checkout.Payment.Bank.Library.TransactionRequest"' using the name '""' in request data ...
+2020-08-17 21:34:02.754 +01:00 [Debug] Selected input formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter"' for content type '"application/json"'.
+2020-08-17 21:34:02.755 +01:00 [Debug] JSON input formatter succeeded, deserializing to type '"Checkout.Payment.Bank.Library.TransactionRequest"'
+2020-08-17 21:34:02.755 +01:00 [Debug] Done attempting to bind parameter '"request"' of type '"Checkout.Payment.Bank.Library.TransactionRequest"'.
+2020-08-17 21:34:02.755 +01:00 [Debug] Done attempting to bind parameter '"request"' of type '"Checkout.Payment.Bank.Library.TransactionRequest"'.
+2020-08-17 21:34:02.756 +01:00 [Debug] Attempting to validate the bound parameter '"request"' of type '"Checkout.Payment.Bank.Library.TransactionRequest"' ...
+2020-08-17 21:34:02.756 +01:00 [Debug] Done attempting to validate the bound parameter '"request"' of type '"Checkout.Payment.Bank.Library.TransactionRequest"'.
+2020-08-17 21:34:02.756 +01:00 [Information] Received payment request Amazon 1212.99 Eur
+2020-08-17 21:34:02.756 +01:00 [Information] Processed payment request Amazon 1212.99 Eur :Insufficient Funds
+2020-08-17 21:34:02.757 +01:00 [Debug] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2020-08-17 21:34:02.760 +01:00 [Debug] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2020-08-17 21:34:02.761 +01:00 [Debug] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2020-08-17 21:34:02.761 +01:00 [Debug] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2020-08-17 21:34:02.761 +01:00 [Debug] Attempting to select the first formatter in the output formatters list which can write the result.
+2020-08-17 21:34:02.761 +01:00 [Debug] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"' and content type '"application/json"' to write the response.
+2020-08-17 21:34:02.761 +01:00 [Information] Executing ObjectResult, writing value of type '"Checkout.Payment.Bank.Library.TransactionResponse"'.
+2020-08-17 21:34:02.762 +01:00 [Information] Executed action "Checkout.Payment.MockBank.Api.Controllers.PaymentServiceController.ProcessTransaction (Checkout.Payment.MockBank.Api)" in 22.6824ms
+2020-08-17 21:34:02.762 +01:00 [Information] Executed endpoint '"Checkout.Payment.MockBank.Api.Controllers.PaymentServiceController.ProcessTransaction (Checkout.Payment.MockBank.Api)"'
+2020-08-17 21:34:02.762 +01:00 [Information] Request finished in 30.0574ms 200 application/json; charset=utf-8
+2020-08-17 21:39:32.561 +01:00 [Debug] Hosting starting
+2020-08-17 21:39:32.809 +01:00 [Debug] Loaded hosting startup assembly "Checkout.Payment.MockBank.Api"
+2020-08-17 21:39:32.815 +01:00 [Information] Application started. Press Ctrl+C to shut down.
+2020-08-17 21:39:32.816 +01:00 [Information] Hosting environment: "Development"
+2020-08-17 21:39:32.816 +01:00 [Information] Content root path: "C:\Users\write\source\repos\Checkout.Payment\Checkout.Payment.MockBank.Api"
+2020-08-17 21:39:32.816 +01:00 [Debug] Hosting started
+2020-08-17 21:39:32.851 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44345/swagger/index.html  
+2020-08-17 21:39:32.855 +01:00 [Debug] Wildcard detected, all requests with hosts will be allowed.
+2020-08-17 21:39:32.898 +01:00 [Information] Request finished in 48.936800000000005ms 200 text/html;charset=utf-8
+2020-08-17 21:39:33.099 +01:00 [Information] Request starting HTTP/2.0 GET https://localhost:44345/swagger/v1/swagger.json  
+2020-08-17 21:39:33.196 +01:00 [Information] Request finished in 96.89280000000001ms 200 application/json;charset=utf-8
